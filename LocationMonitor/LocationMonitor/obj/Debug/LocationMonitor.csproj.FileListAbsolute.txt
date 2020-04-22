@@ -1,0 +1,11 @@
+C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\bin\Debug\LocationMonitor.exe.config
+C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\bin\Debug\LocationMonitor.exe
+C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\bin\Debug\LocationMonitor.pdb
+C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.csprojAssemblyReference.cache
+C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.Form1.resources
+C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.Properties.Resources.resources
+C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.csproj.GenerateResource.cache
+C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.csproj.CoreCompileInputs.cache
+C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.exe
+C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.pdb
+C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.MyForm.LoadingForm.resources
