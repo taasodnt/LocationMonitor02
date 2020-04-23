@@ -9,3 +9,6 @@ C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\obj\De
 C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.exe
 C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.pdb
 C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.MyForm.LoadingForm.resources
+C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.csproj.CopyComplete

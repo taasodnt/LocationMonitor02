@@ -1,6 +1,6 @@
 ﻿namespace LocationMonitor
 {
-    partial class Form1
+    partial class form1
     {
         /// <summary>
         /// 設計工具所需的變數。
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(639, 331);
-            this.Name = "Form1";
-            this.Text = "Loading";
+            this.Name = "form1";
+            this.Text = "定位系統";
             this.ResumeLayout(false);
 
         }
