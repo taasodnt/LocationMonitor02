@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LocationMonitor.MyClass;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,16 +11,35 @@ using System.Windows.Forms;
 
 namespace LocationMonitor.MyForm
 {
-    public partial class AddBeaconForm : Form
-    {
-        public AddBeaconForm()
+     partial class AddBeaconForm : Form
+     {
+         public AddBeaconForm(DataSourceManager dataSourceManager)
+         {
+             InitializeComponent();
+             selectCmb.Select();
+             foreach(string beacon in dataSourceManager.getBeaconQue())
+             {
+                selectCmb.Items.Add(beacon);
+             }
+            selectCmb.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            selectCmb.AutoCompleteSource = AutoCompleteSource.ListItems;
+         }
+
+         private void AddBeaconForm_Load(object sender, EventArgs e)
+         {
+            this.TopMost = true;
+         }
+
+        private void confirmBtn_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
+            // send data back to form1
+            this.DialogResult = DialogResult.Yes;
+            this.Close();
         }
 
-        private void AddBeaconForm_Load(object sender, EventArgs e)
+        public string getBeaconMac()
         {
-
+            return selectCmb.Text;
         }
     }
 }

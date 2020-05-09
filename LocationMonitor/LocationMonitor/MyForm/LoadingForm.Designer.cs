@@ -33,16 +33,18 @@
             // 
             // loadingBar
             // 
-            this.loadingBar.Location = new System.Drawing.Point(31, 52);
+            this.loadingBar.Location = new System.Drawing.Point(26, 40);
             this.loadingBar.Name = "loadingBar";
             this.loadingBar.Size = new System.Drawing.Size(423, 37);
+            this.loadingBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.loadingBar.TabIndex = 0;
             // 
             // LoadingForm
             // 
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 132);
+            this.ClientSize = new System.Drawing.Size(473, 113);
             this.Controls.Add(this.loadingBar);
             this.Name = "LoadingForm";
             this.Text = "LoadingForm";

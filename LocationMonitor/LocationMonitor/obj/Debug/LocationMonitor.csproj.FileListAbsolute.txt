@@ -12,3 +12,4 @@ C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\obj\De
 C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.csproj.CopyComplete
+C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.MyForm.AddBeaconForm.resources

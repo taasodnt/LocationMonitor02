@@ -56,6 +56,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="MyClass\Beacon.cs" />
+    <Compile Include="MyClass\BeaconView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MyClass\DataSourceManager.cs" />
     <Compile Include="MyForm\AddBeaconForm.cs">
       <SubType>Form</SubType>
@@ -88,6 +91,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -102,6 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beacon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

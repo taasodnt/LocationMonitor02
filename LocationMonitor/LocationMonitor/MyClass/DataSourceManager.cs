@@ -8,20 +8,22 @@ using System.Threading.Tasks;
 
 namespace LocationMonitor.MyClass
 {
-    class DataSourceManager
+     class DataSourceManager
     {
         private Dictionary<string,bool> beaconQue;
-        private List<string> phoneMac;
+        private List<string> phoneMacs;
         private List<Beacon> beacons = new List<Beacon>();
+        private object lockBeaconQueObject = new object();
+        private object lockPhoneMacsObject = new object();
 
         public DataSourceManager()
         {
             beaconQue = new Dictionary<string, bool>();
-            phoneMac = new List<string>();
+            phoneMacs = new List<string>();
         }
 
         //更新可用beacon清單
-        private async Task upDateBeaconQue()
+        public async Task upDateBeaconQue()
         {
             HttpClient client = new HttpClient();
             var getBeaconTask = client.GetAsync("http://163.18.53.144/F459/php/c%23_serverbackend/C%23_GetBeaconMac.php");
@@ -32,17 +34,21 @@ namespace LocationMonitor.MyClass
             var convertTask = returnMessage.Content.ReadAsStringAsync();
             Task.WaitAll(convertTask);
             string rawData = await convertTask;
-            foreach (string beaconMac in splitString(rawData, ','))
+            lock (lockBeaconQueObject)
             {
-                if (!beaconQue.ContainsKey(beaconMac))
+                foreach (string beaconMac in splitString(rawData, ','))
                 {
-                    beaconQue.Add(beaconMac, false);
+                    Console.WriteLine(beaconMac);
+                    if (!beaconQue.ContainsKey(beaconMac))
+                    {
+                        beaconQue.Add(beaconMac, false);
+                    }
                 }
             }
         }
 
         //更新消防員手機mac
-        private async Task upDatePhoneMac()
+        public async Task upDatePhoneMac()
         {
             HttpClient client = new HttpClient();
             var getPhoneMacTask = client.GetAsync("http://163.18.53.144/F459/php/c%23_serverbackend/C%23_GetPhoneMac.php");
@@ -53,10 +59,22 @@ namespace LocationMonitor.MyClass
             var convertTask = returnMessage.Content.ReadAsStringAsync();
             Task.WaitAll(convertTask);
             string rawData = await convertTask;
-            foreach(string phoneMac in splitString(rawData, ','))
+            lock (lockPhoneMacsObject)
             {
-                this.phoneMac.Add(phoneMac);
+                foreach (string phoneMac in splitString(rawData, ','))
+                {
+                    Console.WriteLine(phoneMac);
+                    if (!this.phoneMacs.Contains(phoneMac))
+                    {
+                        this.phoneMacs.Add(phoneMac);
+                    }
+                }
             }
+        }
+
+        public List<string> getBeaconQue()
+        {
+            return new List<string>(beaconQue.Keys);
         }
 
         //放置beacon

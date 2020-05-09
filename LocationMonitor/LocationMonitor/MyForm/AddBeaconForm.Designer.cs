@@ -28,34 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.confirmBtn = new System.Windows.Forms.Button();
+            this.selectCmb = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // button1
+            // confirmBtn
             // 
-            this.button1.Location = new System.Drawing.Point(218, 82);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "確認";
-            this.button1.UseVisualStyleBackColor = true;
+            this.confirmBtn.Location = new System.Drawing.Point(218, 82);
+            this.confirmBtn.Name = "confirmBtn";
+            this.confirmBtn.Size = new System.Drawing.Size(75, 23);
+            this.confirmBtn.TabIndex = 0;
+            this.confirmBtn.Text = "確認";
+            this.confirmBtn.UseVisualStyleBackColor = true;
+            this.confirmBtn.Click += new System.EventHandler(this.confirmBtn_Click);
             // 
-            // comboBox1
+            // selectCmb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 42);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(281, 23);
-            this.comboBox1.TabIndex = 1;
+            this.selectCmb.FormattingEnabled = true;
+            this.selectCmb.Location = new System.Drawing.Point(12, 42);
+            this.selectCmb.Name = "selectCmb";
+            this.selectCmb.Size = new System.Drawing.Size(281, 23);
+            this.selectCmb.TabIndex = 1;
             // 
             // AddBeaconForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(310, 123);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.selectCmb);
+            this.Controls.Add(this.confirmBtn);
             this.Name = "AddBeaconForm";
             this.Text = "AddBeaconForm";
             this.Load += new System.EventHandler(this.AddBeaconForm_Load);
@@ -65,7 +66,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button confirmBtn;
+        private System.Windows.Forms.ComboBox selectCmb;
     }
 }

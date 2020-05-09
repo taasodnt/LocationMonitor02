@@ -17,7 +17,8 @@ namespace LocationMonitor.MyForm
         {
             InitializeComponent();
             loadingBar.Style = ProgressBarStyle.Marquee;
-            loadingBar.MarqueeAnimationSpeed = 20;
+            loadingBar.MarqueeAnimationSpeed = 10;
+            loadingBar.BackColor = Color.Green;
         }
     }
 }
