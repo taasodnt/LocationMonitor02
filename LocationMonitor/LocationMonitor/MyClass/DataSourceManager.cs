@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 
 namespace LocationMonitor.MyClass
 {
-     class DataSourceManager
+    class DataSourceManager
     {
-        private Dictionary<string,bool> beaconQue;
+        private Dictionary<string, bool> beaconQue;
         private List<string> phoneMacs;
-        private List<Beacon> beacons = new List<Beacon>();
+        private Dictionary<string,Beacon> beacons;
+        private int floor = 4;
         private object lockBeaconQueObject = new object();
         private object lockPhoneMacsObject = new object();
 
@@ -20,6 +21,7 @@ namespace LocationMonitor.MyClass
         {
             beaconQue = new Dictionary<string, bool>();
             phoneMacs = new List<string>();
+            beacons = new Dictionary<string, Beacon>();
         }
 
         //更新可用beacon清單
@@ -41,7 +43,7 @@ namespace LocationMonitor.MyClass
                     Console.WriteLine(beaconMac);
                     if (!beaconQue.ContainsKey(beaconMac))
                     {
-                        beaconQue.Add(beaconMac, false);
+                        beaconQue.Add(beaconMac, true);
                     }
                 }
             }
@@ -72,15 +74,34 @@ namespace LocationMonitor.MyClass
             }
         }
 
+        public int getFloor()
+        {
+            return floor;
+        }
+
         public List<string> getBeaconQue()
         {
             return new List<string>(beaconQue.Keys);
         }
 
         //放置beacon
-        private void placeBeacon(string beaconMac,Point location)
+        public void placeBeacon(string beaconMac, int floor, Point location)
         {
+            if (beaconQue.ContainsKey(beaconMac) && beaconQue[beaconMac])
+            {
+                beacons.Add(beaconMac,new Beacon(beaconMac, floor, location));
+                beaconQue[beaconMac] = !beaconQue[beaconMac];
+            }
 
+        }
+
+        public void unplaceBeacon(string theBeacon)
+        {
+            if (beacons.ContainsKey(theBeacon))
+            {
+                beacons.Remove(theBeacon);
+                beaconQue[theBeacon] = !beaconQue[theBeacon];
+            }
         }
 
         private string[] splitString(string origin,char splitChar)

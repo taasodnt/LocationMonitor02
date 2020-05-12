@@ -9,15 +9,26 @@ namespace LocationMonitor.MyClass
 {
     class Beacon
     {
-        int floor;
-        Point location;
-        Color color;
+        private int floor;
+        private Point location;
+        private string macAddress;
 
-        public Beacon(int floor, Point location, Color color)
+        public Beacon(string mac,int floor, Point location)
         {
             this.floor = floor;
             this.location = location;
-            this.color = color;
+            macAddress = mac;
+        }
+
+        //for draw
+        public Point getLocation()
+        {
+            return location;
+        }
+
+        public int getFloor()
+        {
+            return floor;
         }
     }
 }

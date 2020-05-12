@@ -17,40 +17,111 @@ namespace LocationMonitor
     public partial class form1 : Form
     {
         DataSourceManager dataSourceManager;
+        FlowLayoutPanel flowLayoutPanel;
+        PictureBox floorPlane;
+        TableLayoutPanel floorSketch;
+        List<Button> floorButton = new List<Button>();
 
         public form1()
         {
             InitializeComponent();
-            
+
             //   doWork();
-            dataSourceManager = new DataSourceManager();
-            LoadingForm loadingForm = new LoadingForm();
-            loadingForm.Show();
-            var getBeaconMacTask = dataSourceManager.upDateBeaconQue();
-            var getPhoneMacTask = dataSourceManager.upDatePhoneMac();
-            Task.WaitAll(getBeaconMacTask, getPhoneMacTask);
-            loadingForm.Close();
-            Console.WriteLine("Done");
+               dataSourceManager = new DataSourceManager();
+               LoadingForm loadingForm = new LoadingForm();
+               loadingForm.Show();
+               var getBeaconMacTask = dataSourceManager.upDateBeaconQue();
+               var getPhoneMacTask = dataSourceManager.upDatePhoneMac();
+               Task.WaitAll(getBeaconMacTask, getPhoneMacTask);
+               loadingForm.Close();
+               this.WindowState = FormWindowState.Maximized;
+               Console.WriteLine("Done");
+               
+            //initForm();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        //the function needs dataSourceManager initialize complete totally
+        private void initForm()
         {
-            Console.WriteLine("click");
-            AddBeaconForm addBeaconForm = new AddBeaconForm(dataSourceManager);
-            DialogResult result = addBeaconForm.ShowDialog();
-            string returnValue = addBeaconForm.getBeaconMac();
-            string[] nickName = returnValue.Split(':');
-            //the following "If" is test only
-            if (returnValue != "" && returnValue != null && result != DialogResult.Cancel)
+            flowLayoutPanel = new FlowLayoutPanel();
+            floorPlane = new PictureBox();
+            Console.WriteLine(this.Size.Height);
+            flowLayoutPanel.Size = new Size(this.Size.Width, this.Size.Height);
+            flowLayoutPanel.BackColor = Color.Blue;
+            flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
+           // flowLayoutPanel.Dock = DockStyle.Fill;
+
+            setFloorSketch();
+
+
+            floorPlane.BackColor = Color.Green;
+
+            
+            
+
+            
+            flowLayoutPanel.Controls.Add(floorSketch);
+            flowLayoutPanel.Controls.Add(floorPlane);
+            this.Controls.Add(flowLayoutPanel);
+        }
+
+        private void setFloorSketch()
+        {
+            floorSketch = new TableLayoutPanel();
+            floorSketch.RowCount = dataSourceManager.getFloor();
+            floorSketch.ColumnCount = 1;
+            floorSketch.BackColor = Color.Red;
+            floorSketch.Size = new Size(flowLayoutPanel.Size.Width/7, flowLayoutPanel.Size.Height);
+            floorSketch.Margin = new Padding(10, 5, 20, 20);
+            //add button into tableLayoutPanel
+            for (int i = 0; i < dataSourceManager.getFloor(); i++)
             {
-                MouseEventArgs mouseEvent = (MouseEventArgs)e;
-                Point point = new Point(mouseEvent.X, mouseEvent.Y);
-                BeaconView beaconView = new BeaconView(nickName[nickName.Length - 2] + ":" + nickName[nickName.Length - 1], point);
-                pictureBox1.Controls.Add(beaconView);
+                Button button = new Button();
+                button.Text = "floor" + i;
+                button.Margin = new Padding(10, 5, 10, 5);
+                button.Anchor = (AnchorStyles.Left | AnchorStyles.Right |AnchorStyles.Top | AnchorStyles.Bottom);
+                floorButton.Add(button);
+                floorSketch.Controls.Add(button, 1, i);
+                floorSketch.RowStyles.Add(new RowStyle(SizeType.Percent, floorSketch.Height * (1 / dataSourceManager.getFloor())));
+            }
+
+           // SizeType.Percent, floorSketch.Height * (1 / dataSourceManager.getFloor()))
+
+            floorSketch.CellBorderStyle = TableLayoutPanelCellBorderStyle.Outset;
+            TableLayoutRowStyleCollection styles = floorSketch.RowStyles;
+            Console.WriteLine(styles.Count);
+           
+            foreach (RowStyle style in styles)
+            {
+                style.SizeType = SizeType.Absolute;
+                style.Height = floorSketch.Size.Height / dataSourceManager.getFloor();
+                Console.WriteLine(style.Height);
             }
         }
 
-        //nickName[nickName.Length-2]+":"+nickName[nickName.Length-1]
+
+        private void form1_Load(object sender, EventArgs e)
+        {
+            initForm();
+        }
+
+        /*   private void pictureBox1_Click(object sender, EventArgs e)
+           {
+               Console.WriteLine("click");
+               AddBeaconForm addBeaconForm = new AddBeaconForm(dataSourceManager);
+               DialogResult result = addBeaconForm.ShowDialog();
+               string returnValue = addBeaconForm.getBeaconMac();
+               string[] nickName = returnValue.Split(':');
+               //the following "If" is test only
+               if (returnValue != "" && returnValue != null && result != DialogResult.Cancel)
+               {
+                   MouseEventArgs mouseEvent = (MouseEventArgs)e;
+                   Point point = new Point(mouseEvent.X, mouseEvent.Y);
+                   BeaconView beaconView = new BeaconView(nickName[nickName.Length - 2] + ":" + nickName[nickName.Length - 1], point);
+                   pictureBox1.Controls.Add(beaconView);
+               }
+           }*/
+
 
 
         /* private async Task doWork() //just for test

@@ -13,3 +13,17 @@ C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\bin\De
 C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.csproj.CopyComplete
 C:\Users\Allen\Desktop\C#\LocationMonitor\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.MyForm.AddBeaconForm.resources
+D:\C#\LocationMonitor02\LocationMonitor\LocationMonitor\bin\Debug\LocationMonitor.exe.config
+D:\C#\LocationMonitor02\LocationMonitor\LocationMonitor\bin\Debug\LocationMonitor.exe
+D:\C#\LocationMonitor02\LocationMonitor\LocationMonitor\bin\Debug\LocationMonitor.pdb
+D:\C#\LocationMonitor02\LocationMonitor\LocationMonitor\bin\Debug\Newtonsoft.Json.dll
+D:\C#\LocationMonitor02\LocationMonitor\LocationMonitor\bin\Debug\Newtonsoft.Json.xml
+D:\C#\LocationMonitor02\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.csprojAssemblyReference.cache
+D:\C#\LocationMonitor02\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.form1.resources
+D:\C#\LocationMonitor02\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.MyForm.AddBeaconForm.resources
+D:\C#\LocationMonitor02\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.MyForm.LoadingForm.resources
+D:\C#\LocationMonitor02\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.Properties.Resources.resources
+D:\C#\LocationMonitor02\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.csproj.GenerateResource.cache
+D:\C#\LocationMonitor02\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.csproj.CopyComplete
+D:\C#\LocationMonitor02\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.exe
+D:\C#\LocationMonitor02\LocationMonitor\LocationMonitor\obj\Debug\LocationMonitor.pdb
